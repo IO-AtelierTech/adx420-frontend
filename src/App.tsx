@@ -5,12 +5,11 @@ import brand from './config/brand'
 function App() {
   return (
     <>
-      <div>
-        <p>hi there! I'm a brand visualization tool.</p>
-      </div>
       <div className='p-8 bg-gray-100 min-h-screen'>
         <BrandShowcase brand={brand} />
-        <NavButton to="/content" variant="secondary">View Content</NavButton>
+        <NavButton to='/content' variant='secondary'>
+          View Content
+        </NavButton>
       </div>
     </>
   )
