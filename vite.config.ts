@@ -11,9 +11,9 @@ export default defineConfig({
       output: {
         manualChunks: {
           react: ['react', 'react-dom'],
-          vendor: ['lodash'],
-        },
-      },
+          vendor: ['lodash']
+        }
+      }
     }
   },
   plugins: [
@@ -27,7 +27,7 @@ export default defineConfig({
           },
           { name: 'Orbitron' },
           { name: 'Space Grotesk' },
-          { name: 'Oswald' },
+          { name: 'Oswald' }
         ]
       }
     }),

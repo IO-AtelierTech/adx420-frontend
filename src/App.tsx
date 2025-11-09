@@ -23,9 +23,7 @@ function App() {
   return (
     <>
       <div>
-        <p>
-          hi there! I'm a brand visualization tool.
-        </p>
+        <p>hi there! I'm a brand visualization tool.</p>
       </div>
       <div className='p-8 bg-gray-100 min-h-screen'>
         <BrandShowcase brand={polymathNebula} />
