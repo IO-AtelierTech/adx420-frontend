@@ -3,10 +3,11 @@ import App from './App'
 import ContentPage from './pages/ContentPage'
 import MainPage from './pages/MainPage'
 
-export const router = createBrowserRouter([
-  { path: '/', element: <App /> },
-  { path: '/content', element: <ContentPage /> },
-  { path: '/main', element: <MainPage /> }
-],
+export const router = createBrowserRouter(
+  [
+    { path: '/', element: <App /> },
+    { path: '/content', element: <ContentPage /> },
+    { path: '/main', element: <MainPage /> }
+  ],
   { basename: import.meta.env.BASE_URL }
 )
