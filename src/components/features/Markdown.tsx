@@ -12,9 +12,7 @@ export const BasicMarkdownWrapper: React.FC<MarkdownWrapperProps> = ({ content }
   return (
     <ReactMarkdown
       children={content}
-      remarkPlugins={[
-        remarkMath,
-      ]}
+      remarkPlugins={[remarkMath]}
       rehypePlugins={[rehypeRaw, rehypeStringify]}
       components={{
         h1: ({ children }) => (
