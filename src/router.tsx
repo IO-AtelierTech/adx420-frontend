@@ -7,4 +7,6 @@ export const router = createBrowserRouter([
   { path: '/', element: <App /> },
   { path: '/content', element: <ContentPage /> },
   { path: '/main', element: <MainPage /> }
-])
+],
+  { basename: import.meta.env.BASE_URL }
+)
