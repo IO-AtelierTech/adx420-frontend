@@ -43,3 +43,5 @@ dist-ssr
 
 ## --> ELSE ADD if NOT using yarn's zero-install:
 .pnp.*
+
+stats.html
