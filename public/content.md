@@ -45,4 +45,4 @@ $$
 
 ## Image
 
-![tealake](public/image.webp)
+![tealake](image.webp)
