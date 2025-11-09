@@ -22,6 +22,7 @@ export default defineConfig({
     Unfonts({
       google: {
         families: [
+          { name: 'Audiowide', styles: 'wght@400' },
           {
             name: 'Poppins',
             styles: 'wght@400;700'
