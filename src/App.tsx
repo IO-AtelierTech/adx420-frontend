@@ -1,6 +1,6 @@
 import BrandShowcase, { BrandConcept } from './components/BrandVisualizer'
 
-export const polymathNebula: BrandConcept = {
+const polymathNebula: BrandConcept = {
   name: 'Polymath Nebula',
   tagline: ['Connecting melodies across universes', 'Conectando melodias a través de universos'],
   palette: {
@@ -21,9 +21,16 @@ export const polymathNebula: BrandConcept = {
 
 function App() {
   return (
-    <div className='p-8 bg-gray-100 min-h-screen'>
-      <BrandShowcase brand={polymathNebula} />
-    </div>
+    <>
+      <div>
+        <p>
+          hi there! I'm a brand visualization tool.
+        </p>
+      </div>
+      <div className='p-8 bg-gray-100 min-h-screen'>
+        <BrandShowcase brand={polymathNebula} />
+      </div>
+    </>
   )
 }
 
