@@ -19,4 +19,4 @@ const polymathNebula: BrandConcept = {
   }
 }
 
-export default polymathNebula;
+export default polymathNebula

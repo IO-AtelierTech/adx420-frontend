@@ -29,7 +29,7 @@ export function NavButton({ to, children, variant = 'primary' }: NavButtonProps)
       hover:bg-[${palette.neutral}]
       active:bg-[${palette.secondary}]
       focus:ring-[${palette.accent}]
-    `,
+    `
   }
   return (
     <Link to={to} className={`${base} ${variants[variant]}`}>

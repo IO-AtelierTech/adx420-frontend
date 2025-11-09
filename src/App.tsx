@@ -10,7 +10,9 @@ function App() {
       </div>
       <div className='p-8 bg-gray-100 min-h-screen'>
         <BrandShowcase brand={brand} />
-        <NavButton to="/content" variant="secondary">View Content</NavButton>
+        <NavButton to='/content' variant='secondary'>
+          View Content
+        </NavButton>
       </div>
     </>
   )
