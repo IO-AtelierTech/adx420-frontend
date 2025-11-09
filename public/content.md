@@ -16,33 +16,6 @@ _For Haskell so loved the `world -> (a, world)` that it gave us the
 `IO Monad`, that whosoever composes with it should not be impure,
 but free of side effects._
 
-## Diagram
-
-```mermaid
----
-title: Simple sample
----
-stateDiagram-v2
-    direction LR
-    [*] --> Still
-    Still --> [*]
-
-    Still --> Moving
-    Moving --> Still
-    Moving --> Crash
-    Crash --> [*]
-```
-
-The conclusion: $\Diamond aPx \rightarrow \Box bQy$
-
-$$
-\begin{aligned}
-    f(x) &= x^2 \\
-    g(x) &= \frac{1}{x} \\
-    F(x) &= \int^a_b \frac{1}{3}x^3
-\end{aligned}
-$$
-
 ## Image
 
 ![tealake](image.webp)
