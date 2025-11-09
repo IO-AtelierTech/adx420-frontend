@@ -45,3 +45,4 @@ dist-ssr
 .pnp.*
 
 stats.html
+.vite/*
