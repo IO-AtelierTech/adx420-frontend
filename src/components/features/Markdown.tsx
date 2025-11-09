@@ -3,7 +3,6 @@ import ReactMarkdown from 'react-markdown'
 import remarkMath from 'remark-math'
 import rehypeRaw from 'rehype-raw'
 import rehypeStringify from 'rehype-stringify'
-import remarkMermaidPlugin from 'remark-mermaid-plugin'
 
 interface MarkdownWrapperProps {
   content: string
@@ -15,8 +14,6 @@ export const BasicMarkdownWrapper: React.FC<MarkdownWrapperProps> = ({ content }
       children={content}
       remarkPlugins={[
         remarkMath,
-        // @ts-expect-error The plugin doesn't type check correctly
-        [remarkMermaidPlugin, { theme: 'light' }]
       ]}
       rehypePlugins={[rehypeRaw, rehypeStringify]}
       components={{
