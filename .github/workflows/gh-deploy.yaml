@@ -3,11 +3,11 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Deploy when main is updated
-  workflow_dispatch:  # Manual trigger
+      - main # Deploy when main is updated
+  workflow_dispatch: # Manual trigger
 
 permissions:
-  contents: write  # Needed to push to github-pages branch
+  contents: write # Needed to push to github-pages branch
 
 jobs:
   build-and-deploy:
@@ -17,7 +17,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Required to push to another branch
+          fetch-depth: 0 # Required to push to another branch
 
       - name: Enable Corepack (Yarn 4+)
         run: corepack enable

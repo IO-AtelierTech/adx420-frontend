@@ -2,7 +2,7 @@ name: Prettify Code
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   prettify:
