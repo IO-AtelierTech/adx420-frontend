@@ -16,15 +16,15 @@ export function NavButton({ to, children, variant = 'primary' }: NavButtonProps)
       '--btn-bg': palette.accent,
       '--btn-color': palette.neutral,
       '--btn-hover': palette.contrast,
-      '--btn-active': palette.secondary,
+      '--btn-active': palette.secondary
     } as React.CSSProperties,
     secondary: {
       '--btn-bg': palette.neutral,
       '--btn-color': palette.accent,
       '--btn-hover': palette.secondary,
       '--btn-active': palette.contrast,
-      '--btn-border': palette.contrast,
-    } as React.CSSProperties,
+      '--btn-border': palette.contrast
+    } as React.CSSProperties
   }
 
   const baseClass = `
@@ -36,7 +36,7 @@ export function NavButton({ to, children, variant = 'primary' }: NavButtonProps)
 
   const variantBase: Record<'primary' | 'secondary', string> = {
     primary: 'text-[var(--btn-color)] bg-[var(--btn-bg)]',
-    secondary: 'text-[var(--btn-color)] bg-[var(--btn-bg)] border-2 border-[var(--btn-border)]',
+    secondary: 'text-[var(--btn-color)] bg-[var(--btn-bg)] border-2 border-[var(--btn-border)]'
   }
 
   return (
@@ -45,7 +45,7 @@ export function NavButton({ to, children, variant = 'primary' }: NavButtonProps)
       className={`${baseClass} ${variantBase[variant]}`}
       style={{
         fontFamily: typography.logo,
-        ...variantVars[variant],
+        ...variantVars[variant]
       }}
     >
       {children}
