@@ -1,12 +1,17 @@
 import BrandShowcase from './components/BrandVisualizer'
-import { currentBrand } from './config'
-
+import { NavButton } from './components/NavButton'
+import brand from './config/brand'
 
 function App() {
   return (
-    <div className="p-8 bg-gray-100 min-h-screen">
-      <BrandShowcase brand={currentBrand} />
-    </div>
+    <>
+      <div className='p-8 bg-gray-100 min-h-screen'>
+        <BrandShowcase brand={brand} />
+        <NavButton to='/content' variant='primary'>
+          View Content
+        </NavButton>
+      </div>
+    </>
   )
 }
 

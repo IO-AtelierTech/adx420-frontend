@@ -3,9 +3,6 @@ import ReactMarkdown from 'react-markdown'
 import remarkMath from 'remark-math'
 import rehypeRaw from 'rehype-raw'
 import rehypeStringify from 'rehype-stringify'
-import remarkMermaidPlugin from 'remark-mermaid-plugin'
-import rehypeKatex from 'rehype-katex'
-import 'katex/dist/katex.min.css' // Include KaTeX styles
 
 interface MarkdownWrapperProps {
   content: string
@@ -15,12 +12,8 @@ export const BasicMarkdownWrapper: React.FC<MarkdownWrapperProps> = ({ content }
   return (
     <ReactMarkdown
       children={content}
-      remarkPlugins={[
-        remarkMath,
-        // @ts-ignore
-        [remarkMermaidPlugin, { theme: 'light' }]
-      ]}
-      rehypePlugins={[rehypeRaw, rehypeStringify, rehypeKatex]}
+      remarkPlugins={[remarkMath]}
+      rehypePlugins={[rehypeRaw, rehypeStringify]}
       components={{
         h1: ({ children }) => (
           <h1 className='text-4xl font-bold font-audiowide text-blue-600 mb-4'>{children}</h1>
