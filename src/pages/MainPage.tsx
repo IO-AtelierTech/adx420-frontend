@@ -1,28 +1,13 @@
-import React from 'react'
-import BrandShowcase, { BrandConcept } from '../components/BrandVisualizer'
+import React from "react";
+import BrandShowcase from "../components/BrandVisualizer";
+import { currentBrand } from "../config";
 
-export const polymathNebula: BrandConcept = {
-  name: 'Polymath Nebula',
-  tagline: ['Connecting melodies across universes', 'Conectando melodias a través de universos'],
-  palette: {
-    base: '#222222', // Charcoal: Modern sophistication with depth (neutral, grounded)
-    accent: '#FF4D89', // Electric Pink: Vibrant, bold, and youthful energy
-    contrast: '#00D1C1', // Electric Teal: Clean, tech-forward, dynamic
-    secondary: '#FFB81C', // Solar Yellow: Playful and energetic, adding warmth and vibrancy
-    neutral: '#F4F4F4', // Soft Gray: Calm, balanced, and easy on the eyes
-    background: '#FF5C8D' // Gradient Pink: Evokes digital spaces and futuristic vibes
-  },
-  typography: {
-    logo: 'Orbitron', // Futuristic, playful, and tech-inspired font, perfect for logo
-    primary: 'Poppins', // Clean, modern, approachable sans-serif for body text
-    secondary: 'Space Grotesk', // A tech-inspired typeface for subheadings and detail
-    headers: 'Oswald' // Strong and professional for headers
-  }
-}
-
-const neuroMuse: BrandConcept = {
-  name: 'NeuroMuse',
-  tagline: ['Technology inspired by creativity.', 'Tecnología inspirada por la creatividad.'],
+const neuroMuse = {
+  name: "NeuroMuse",
+  tagline: [
+    "Technology inspired by creativity.",
+    "Tecnología inspirada por la creatividad."
+  ],
   palette: {
     base: '#3C3F58', // Midnight Navy: Confidence and reliability
     accent: '#9B5DE5', // Electric Purple: Creativity and individuality
@@ -39,9 +24,12 @@ const neuroMuse: BrandConcept = {
   }
 }
 
-const nexoraBrand: BrandConcept = {
-  name: 'Nexora',
-  tagline: ['Digital elegance, redefined.', 'La elegancia digital, redefinida.'],
+const nexoraBrand = {
+  name: "Nexora",
+  tagline: [
+    "Digital elegance, redefined.",
+    "La elegancia digital, redefinida."
+  ],
   palette: {
     base: '#2C3E50', // dark blue
     accent: '#8E44AD', // purple
@@ -58,9 +46,12 @@ const nexoraBrand: BrandConcept = {
   }
 }
 
-const harmonicFusionBrand: BrandConcept = {
-  name: 'Harmonic Fusion',
-  tagline: ['Where music meets the blockchain.', 'Donde la música se encuentra con la blockchain.'],
+const harmonicFusionBrand = {
+  name: "Harmonic Fusion",
+  tagline: [
+    "Where music meets the blockchain.",
+    "Donde la música se encuentra con la blockchain."
+  ],
   palette: {
     base: '#1A1A2E', // deep midnight blue
     accent: '#E94560', // vibrant crimson
@@ -79,8 +70,8 @@ const harmonicFusionBrand: BrandConcept = {
 
 const App: React.FC = () => {
   return (
-    <div className='p-8 bg-gray-100 min-h-screen'>
-      <BrandShowcase brand={polymathNebula} />
+    <div className="p-8 bg-gray-100 min-h-screen">
+      <BrandShowcase brand={currentBrand} />
       <BrandShowcase brand={neuroMuse} />
       <BrandShowcase brand={nexoraBrand} />
       <BrandShowcase brand={harmonicFusionBrand} />
