@@ -1,27 +1,5 @@
 import React from "react";
-
-interface Palette {
-  base: string;
-  accent: string;
-  contrast: string;
-  secondary: string;
-  neutral: string;
-  background: string;
-}
-
-interface Typography {
-  logo: string;
-  headers: string;
-  primary: string;
-  secondary: string;
-}
-
-export interface BrandConcept {
-  name: string;
-  tagline: string | string[];
-  palette: Palette;
-  typography: Typography;
-}
+import { BrandConcept } from "../config";
 
 interface BrandVisualizerProps {
   brand: BrandConcept;
