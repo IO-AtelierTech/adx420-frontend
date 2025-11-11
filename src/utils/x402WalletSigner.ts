@@ -2,7 +2,12 @@ import type { Address } from '@solana/addresses'
 import type { WalletContextState } from '@solana/wallet-adapter-react'
 import type { Signer } from 'x402-axios'
 import type { Transaction as KitTransaction } from '@solana/transactions'
-import { Message, Transaction as LegacyTransaction, VersionedMessage, VersionedTransaction } from '@solana/web3.js'
+import {
+  Message,
+  Transaction as LegacyTransaction,
+  VersionedMessage,
+  VersionedTransaction
+} from '@solana/web3.js'
 import { Buffer } from 'buffer'
 
 type WalletSignerConfig = {

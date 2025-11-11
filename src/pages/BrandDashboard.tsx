@@ -243,19 +243,19 @@ export function BrandDashboard() {
                   <Label htmlFor='ad-image' required>
                     Banner image
                   </Label>
-                <label
-                  htmlFor='ad-image'
-                  className='flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-border bg-surface px-4 py-8 text-center text-sm text-text-secondary hover:border-primary'
-                >
-                  <span className='font-medium text-text'>
-                    {formValues.file ? formValues.file.name : 'Drop your banner here'}
-                  </span>
-                  <span className='text-text-muted'>PNG, JPG or GIF · max 5MB</span>
-                  <Input
-                    id='ad-image'
-                    type='file'
-                    accept='image/*'
-                    className='hidden'
+                  <label
+                    htmlFor='ad-image'
+                    className='flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-border bg-surface px-4 py-8 text-center text-sm text-text-secondary hover:border-primary'
+                  >
+                    <span className='font-medium text-text'>
+                      {formValues.file ? formValues.file.name : 'Drop your banner here'}
+                    </span>
+                    <span className='text-text-muted'>PNG, JPG or GIF · max 5MB</span>
+                    <Input
+                      id='ad-image'
+                      type='file'
+                      accept='image/*'
+                      className='hidden'
                       onChange={handleCreativeChange}
                     />
                   </label>
