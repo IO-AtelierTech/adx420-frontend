@@ -17,7 +17,7 @@ export default {
         border: 'var(--color-border)',
         text: 'var(--color-text)',
         'text-secondary': 'var(--color-text-secondary)',
-        'text-muted': 'var(--color-text-muted)',
+        'text-muted': 'var(--color-text-muted)'
       },
       fontFamily: {
         sans: 'var(--font-family-sans)',
@@ -34,13 +34,13 @@ export default {
         xl: 'var(--font-size-xl)',
         '2xl': 'var(--font-size-2xl)',
         '3xl': 'var(--font-size-3xl)',
-        '4xl': 'var(--font-size-4xl)',
+        '4xl': 'var(--font-size-4xl)'
       },
       fontWeight: {
         normal: 'var(--font-weight-normal)',
         medium: 'var(--font-weight-medium)',
         semibold: 'var(--font-weight-semibold)',
-        bold: 'var(--font-weight-bold)',
+        bold: 'var(--font-weight-bold)'
       },
       spacing: {
         px: 'var(--spacing-px)',
@@ -67,7 +67,7 @@ export default {
         40: 'var(--spacing-40)',
         48: 'var(--spacing-48)',
         56: 'var(--spacing-56)',
-        64: 'var(--spacing-64)',
+        64: 'var(--spacing-64)'
       },
       borderRadius: {
         none: 'var(--border-radius-none)',
@@ -76,8 +76,8 @@ export default {
         lg: 'var(--border-radius-lg)',
         xl: 'var(--border-radius-xl)',
         '2xl': 'var(--border-radius-2xl)',
-        full: 'var(--border-radius-full)',
-      },
+        full: 'var(--border-radius-full)'
+      }
     }
   },
   plugins: []

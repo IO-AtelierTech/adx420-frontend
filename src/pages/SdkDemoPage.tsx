@@ -20,7 +20,7 @@ export function SdkDemoPage() {
     wallet: '${walletAddress || 'YOUR_WALLET'}',
     tags: [${tags
       .split(',')
-      .map(tag => `'${tag.trim()}'`)
+      .map((tag) => `'${tag.trim()}'`)
       .join(', ')}]
   });
 
@@ -31,64 +31,68 @@ export function SdkDemoPage() {
 </script>`
 
   return (
-    <div className="min-h-screen bg-background text-text">
-      <div className="border-b border-border bg-surface">
-        <div className="container mx-auto flex flex-col gap-4 px-6 py-6 md:flex-row md:items-center md:justify-between">
+    <div className='min-h-screen bg-background text-text'>
+      <div className='border-b border-border bg-surface'>
+        <div className='container mx-auto flex flex-col gap-4 px-6 py-6 md:flex-row md:items-center md:justify-between'>
           <div>
-            <p className="text-sm text-text-secondary">SDK Playground</p>
-            <h1 className="text-3xl font-semibold">Test Adx402 live</h1>
+            <p className='text-sm text-text-secondary'>SDK Playground</p>
+            <h1 className='text-3xl font-semibold'>Test Adx402 live</h1>
           </div>
-          <div className="flex flex-col items-start gap-2 md:flex-row md:items-center">
-            <div className="text-sm text-text-secondary">
+          <div className='flex flex-col items-start gap-2 md:flex-row md:items-center'>
+            <div className='text-sm text-text-secondary'>
               {wallet?.publicKey
                 ? `Connected wallet: ${wallet.publicKey.slice(0, 4)}…${wallet.publicKey.slice(-4)}`
                 : 'Connect a wallet to get started'}
             </div>
-            <WalletMultiButton className="!bg-primary !text-white hover:!bg-primary/90" />
+            <WalletMultiButton className='!bg-primary !text-white hover:!bg-primary/90' />
           </div>
         </div>
       </div>
 
-      <main className="container mx-auto grid gap-6 px-6 py-8 lg:grid-cols-2">
+      <main className='container mx-auto grid gap-6 px-6 py-8 lg:grid-cols-2'>
         <Card>
           <CardHeader>
             <CardTitle>Configure your slot</CardTitle>
             <CardDescription>These values are passed to `adx402.render`</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="demo-wallet">Publisher wallet</Label>
+          <CardContent className='space-y-4'>
+            <div className='space-y-2'>
+              <Label htmlFor='demo-wallet'>Publisher wallet</Label>
               <Input
-                id="demo-wallet"
+                id='demo-wallet'
                 value={walletAddress}
-                onChange={e => setWalletAddress(e.target.value)}
-                placeholder="e.g. 4f8P...Xa"
+                onChange={(e) => setWalletAddress(e.target.value)}
+                placeholder='e.g. 4f8P...Xa'
               />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="demo-tags">Tags</Label>
-              <Input id="demo-tags" value={tags} onChange={e => setTags(e.target.value)} />
+            <div className='space-y-2'>
+              <Label htmlFor='demo-tags'>Tags</Label>
+              <Input id='demo-tags' value={tags} onChange={(e) => setTags(e.target.value)} />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="demo-aspect">Aspect Ratio</Label>
+            <div className='space-y-2'>
+              <Label htmlFor='demo-aspect'>Aspect Ratio</Label>
               <select
-                id="demo-aspect"
+                id='demo-aspect'
                 value={aspectRatio}
-                onChange={e => setAspectRatio(e.target.value)}
-                className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-text"
+                onChange={(e) => setAspectRatio(e.target.value)}
+                className='w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-text'
               >
-                {['16x9', '1x1', '5x6', 'auto'].map(option => (
+                {['16x9', '1x1', '5x6', 'auto'].map((option) => (
                   <option key={option} value={option}>
                     {option}
                   </option>
                 ))}
               </select>
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="demo-fallback">Fallback</Label>
-              <Input id="demo-fallback" value={fallback} onChange={e => setFallback(e.target.value)} />
+            <div className='space-y-2'>
+              <Label htmlFor='demo-fallback'>Fallback</Label>
+              <Input
+                id='demo-fallback'
+                value={fallback}
+                onChange={(e) => setFallback(e.target.value)}
+              />
             </div>
-            <Button className="w-full" variant="outline">
+            <Button className='w-full' variant='outline'>
               Render ad
             </Button>
           </CardContent>
@@ -99,13 +103,13 @@ export function SdkDemoPage() {
             <CardTitle>Preview</CardTitle>
             <CardDescription>The SDK will render the ad here</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="rounded-xl border border-dashed border-border p-8 text-center text-text-secondary">
+          <CardContent className='space-y-4'>
+            <div className='rounded-xl border border-dashed border-border p-8 text-center text-text-secondary'>
               Slot `#adx-demo-slot` ready to render.
             </div>
             <div>
-              <p className="mb-2 text-sm font-medium text-text">Generated snippet</p>
-              <pre className="rounded-lg bg-surface p-4 text-sm text-text overflow-x-auto">
+              <p className='mb-2 text-sm font-medium text-text'>Generated snippet</p>
+              <pre className='rounded-lg bg-surface p-4 text-sm text-text overflow-x-auto'>
                 {codeSnippet}
               </pre>
             </div>
