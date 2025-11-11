@@ -2,7 +2,7 @@ import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import { useMemo } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/Card'
 import { Button } from '../components/ui/Button'
-import { Input, Textarea, Label } from '../components/ui/Input'
+import { Input, Label } from '../components/ui/Input'
 import { mockAds, mockMetrics } from '../data/mockData'
 import { useWallet } from '../contexts'
 

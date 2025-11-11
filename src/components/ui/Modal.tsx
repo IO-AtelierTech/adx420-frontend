@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
-import { Button } from './Button';
 
 const modalVariants = cva(
   "fixed inset-0 z-50 flex items-center justify-center p-4",
@@ -106,7 +105,7 @@ export function Modal({
 
 export interface ModalContentProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof contentVariants> {
+  VariantProps<typeof contentVariants> {
   children: React.ReactNode;
 }
 
