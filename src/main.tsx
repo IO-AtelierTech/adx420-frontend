@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { RouterProvider } from 'react-router-dom'
-import { router } from './router'
+import { BrowserRouter } from 'react-router-dom'
+import { AppRoutes } from './router'
 import { ThemeProvider, WalletProvider } from './contexts'
 import { SolanaProviders } from './providers/SolanaProviders'
 import './index.css'
@@ -13,7 +13,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <SolanaProviders>
       <ThemeProvider>
         <WalletProvider>
-          <RouterProvider router={router} />
+          <BrowserRouter>
+            <AppRoutes />
+          </BrowserRouter>
         </WalletProvider>
       </ThemeProvider>
     </SolanaProviders>
