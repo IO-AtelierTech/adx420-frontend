@@ -46,11 +46,14 @@ export function PublisherDashboard() {
     setIsRegistering(true)
     setRegistrationError(null)
     setIsPublisherAlreadyRegistered(false)
-    
+
     try {
       const signer = createWalletAdapterSigner(solanaWallet)
-      const tags = publisherForm.tags.split(',').map(tag => tag.trim()).filter(Boolean)
-      
+      const tags = publisherForm.tags
+        .split(',')
+        .map((tag) => tag.trim())
+        .filter(Boolean)
+
       await registerPublisher({
         signer,
         walletAddress: wallet.publicKey,
@@ -62,13 +65,15 @@ export function PublisherDashboard() {
       setPublisherForm({ domain: '', tags: '' })
     } catch (error) {
       console.error('Registration failed:', error)
-      
+
       if (axios.isAxiosError(error) && error.response?.data?.error) {
         const errorData = error.response.data.error
-        
+
         if (errorData.code === 'PUBLISHER_ALREADY_EXISTS') {
           setIsPublisherAlreadyRegistered(true)
-          setRegistrationError('You are already registered as a publisher with this wallet address.')
+          setRegistrationError(
+            'You are already registered as a publisher with this wallet address.'
+          )
         } else {
           setRegistrationError(errorData.message || 'Registration failed. Please try again.')
         }
@@ -91,9 +96,15 @@ export function PublisherDashboard() {
     setIsCreatingSlot(true)
     try {
       const signer = createWalletAdapterSigner(solanaWallet)
-      const tags = slotForm.tags.split(',').map(tag => tag.trim()).filter(Boolean)
-      const aspectRatios = slotForm.aspectRatios.split(',').map(ratio => ratio.trim()).filter(Boolean)
-      
+      const tags = slotForm.tags
+        .split(',')
+        .map((tag) => tag.trim())
+        .filter(Boolean)
+      const aspectRatios = slotForm.aspectRatios
+        .split(',')
+        .map((ratio) => ratio.trim())
+        .filter(Boolean)
+
       await createSlot({
         signer,
         wallet: wallet.publicKey,
@@ -171,7 +182,9 @@ export function PublisherDashboard() {
             <Card>
               <CardHeader>
                 <CardTitle>Register as Publisher</CardTitle>
-                <CardDescription>Register your domain to start monetizing your inventory</CardDescription>
+                <CardDescription>
+                  Register your domain to start monetizing your inventory
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 {registrationError && (
@@ -184,26 +197,30 @@ export function PublisherDashboard() {
                     <Label htmlFor='domain' required>
                       Domain
                     </Label>
-                    <Input 
-                      id='domain' 
+                    <Input
+                      id='domain'
                       placeholder='example.com'
                       value={publisherForm.domain}
-                      onChange={(e) => setPublisherForm(prev => ({ ...prev, domain: e.target.value }))}
+                      onChange={(e) =>
+                        setPublisherForm((prev) => ({ ...prev, domain: e.target.value }))
+                      }
                       required
                     />
                   </div>
                   <div className='space-y-2'>
                     <Label htmlFor='publisher-tags'>Tags (comma-separated)</Label>
-                    <Input 
-                      id='publisher-tags' 
+                    <Input
+                      id='publisher-tags'
                       placeholder='technology, gaming, news'
                       value={publisherForm.tags}
-                      onChange={(e) => setPublisherForm(prev => ({ ...prev, tags: e.target.value }))}
+                      onChange={(e) =>
+                        setPublisherForm((prev) => ({ ...prev, tags: e.target.value }))
+                      }
                     />
                   </div>
-                  <Button 
-                    type='submit' 
-                    className='w-full' 
+                  <Button
+                    type='submit'
+                    className='w-full'
                     disabled={isRegistering || !wallet?.publicKey}
                   >
                     {isRegistering ? 'Registering...' : 'Register as Publisher'}
@@ -233,11 +250,14 @@ export function PublisherDashboard() {
               <CardContent>
                 <div className='p-4 bg-primary/10 border border-primary/20 rounded-lg text-primary'>
                   <p className='font-semibold'>Publisher Status: Active</p>
-                  <p className='text-sm'>Your wallet is already registered as a publisher. You can continue creating advertising slots for your websites.</p>
+                  <p className='text-sm'>
+                    Your wallet is already registered as a publisher. You can continue creating
+                    advertising slots for your websites.
+                  </p>
                 </div>
                 <div className='mt-4'>
-                  <Button 
-                    variant='outline' 
+                  <Button
+                    variant='outline'
                     size='sm'
                     onClick={() => {
                       setIsPublisherAlreadyRegistered(false)
@@ -267,35 +287,37 @@ export function PublisherDashboard() {
                   <Label htmlFor='slot-id' required>
                     Slot ID (CSS selector)
                   </Label>
-                  <Input 
-                    id='slot-id' 
+                  <Input
+                    id='slot-id'
                     placeholder='#adx-slot or .ad-banner'
                     value={slotForm.slotId}
-                    onChange={(e) => setSlotForm(prev => ({ ...prev, slotId: e.target.value }))}
+                    onChange={(e) => setSlotForm((prev) => ({ ...prev, slotId: e.target.value }))}
                     required
                   />
                 </div>
                 <div className='space-y-2'>
                   <Label htmlFor='slot-tags'>Tags (comma-separated)</Label>
-                  <Input 
-                    id='slot-tags' 
+                  <Input
+                    id='slot-tags'
                     placeholder='tech, fintech, gaming'
                     value={slotForm.tags}
-                    onChange={(e) => setSlotForm(prev => ({ ...prev, tags: e.target.value }))}
+                    onChange={(e) => setSlotForm((prev) => ({ ...prev, tags: e.target.value }))}
                   />
                 </div>
                 <div className='space-y-2'>
                   <Label htmlFor='slot-ratio'>Allowed aspect ratios (comma-separated)</Label>
-                  <Input 
-                    id='slot-ratio' 
+                  <Input
+                    id='slot-ratio'
                     placeholder='16:9, 4:3, 1:1'
                     value={slotForm.aspectRatios}
-                    onChange={(e) => setSlotForm(prev => ({ ...prev, aspectRatios: e.target.value }))}
+                    onChange={(e) =>
+                      setSlotForm((prev) => ({ ...prev, aspectRatios: e.target.value }))
+                    }
                   />
                 </div>
-                <Button 
-                  type='submit' 
-                  className='w-full' 
+                <Button
+                  type='submit'
+                  className='w-full'
                   disabled={isCreatingSlot || !wallet?.publicKey}
                 >
                   {isCreatingSlot ? 'Creating...' : 'Create Slot'}

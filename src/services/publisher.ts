@@ -56,7 +56,7 @@ export async function registerPublisher({
       domain,
       tags
     })
-    
+
     return response.data
   } catch (error) {
     console.error('Error registering publisher:', error)
@@ -89,7 +89,7 @@ export async function createSlot({
       tags,
       aspectRatios
     })
-    
+
     return response.data
   } catch (error) {
     console.error('Error creating slot:', error)
